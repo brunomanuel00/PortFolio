@@ -1,0 +1,31 @@
+{
+    "layout": {
+        "brand": {
+            "part1": "My",
+            "part2": "Portfolio"
+        },
+        "navItems": {
+            "home": "Home",
+            "services": "Services",
+            "projects": "Project",
+            "contact": "Contact"
+        },
+        "language": {
+            "title": "Language",
+            "es": "Spanish",
+            "en": "English"
+        },
+        "footer": {
+            "copyright": "© {{year}} My Portfolio. All rights reserved."
+        }
+    },
+    "hero": {
+        "presentation": "Hello, I'm",
+        "profession": "Frontend Developer with a Full-Stack approach",
+        "description": "I build modern, accessible, and efficient interfaces using React and TypeScript, integrating backend solutions with Express and MongoDB when necessary. I'm passionate about creating complete experiences that combine functionality, performance, and great design.",
+        "goTo": {
+            "projects": "Projects",
+            "contact": "Contact"
+        }
+    }
+}

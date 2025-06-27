@@ -1,0 +1,31 @@
+{
+    "layout": {
+        "brand": {
+            "part1": "Mi",
+            "part2": "Portafolio"
+        },
+        "navItems": {
+            "home": "Inicio",
+            "services": "Servicios",
+            "projects": "Proyectos",
+            "contact": "Contacto"
+        },
+        "language": {
+            "title": "Idioma",
+            "es": "Español",
+            "en": "Inglés"
+        },
+        "footer": {
+            "copyright": "© {{year}} Mi Portafolio. Todos los derechos reservados."
+        }
+    },
+    "hero": {
+        "presentation": "Hola, soy",
+        "profession": "Desarrollador Frontend con enfoque Full-Stack",
+        "description": "Construyo interfaces modernas, accesibles y eficientes utilizando React y TypeScript, integrando soluciones backend con Express y MongoDB cuando es necesario. Apasionado por crear experiencias completas que combinan funcionalidad, rendimiento y buen diseño.",
+        "goTo": {
+            "projects": "Proyectos",
+            "contact": "Contactar"
+        }
+    }
+}
