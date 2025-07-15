@@ -101,6 +101,19 @@
                 "message": "Mensaje",
                 "sent": "Enviar Mensaje"
             }
+        },
+        "info": {
+            "title": "Información de contacto",
+            "location": "Ubicación",
+            "mail": "Email",
+            "phone": "Teléfono",
+            "schedule": {
+                "workTime": "Horario de trabajo",
+                "monToFri": "Lunes - Viernes: ",
+                "saturday": "Sábado:",
+                "sunday": "Domingo",
+                "sundayTime": "Cerrado"
+            }
         }
     }
 }

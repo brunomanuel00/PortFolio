@@ -93,13 +93,26 @@
         },
         "description": "Do you have a project in mind? Contact me and let's talk about how I can help you.",
         "form": {
-            "title": "Envíame un mensaje",
+            "title": "Send me a message",
             "placeholders": {
                 "name": "Name",
                 "email": "Mail",
-                "subject": "Asunto",
-                "message": "Mensaje",
-                "sent": "Enviar Mensaje"
+                "subject": "Subject",
+                "message": "Message",
+                "sent": "Sent Message"
+            }
+        },
+        "info": {
+            "title": "Contact information",
+            "location": "Location",
+            "mail": "Mail",
+            "phone": "Phone",
+            "schedule": {
+                "workTime": "Working hours",
+                "monToFri": "Monday - Friday: ",
+                "saturday": "Saturday:",
+                "sunday": "Sunday",
+                "sundayTime": "Closed"
             }
         }
     }

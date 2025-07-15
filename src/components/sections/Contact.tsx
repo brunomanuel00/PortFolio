@@ -35,25 +35,25 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-semibold mb-6">Envíame un mensaje</h3>
+            <h3 className="text-2xl font-semibold mb-6">{t('contact.form.title')}</h3>
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Input
-                    placeholder="Nombre"
+                    placeholder={t('contact.form.placeholders.name')}
                     className="border-border focus:border-[#1be9ec] bg-card"
                     onClick={triggerBackgroundAnimation}
                   />
                 </div>
                 <div>
                   <Input
-                    placeholder="Email"
+                    placeholder={t('contact.form.placeholders.email')}
                     type="email"
                     className="border-border focus:border-[#1be9ec] bg-card"
                     onClick={triggerBackgroundAnimation}
@@ -62,14 +62,14 @@ export default function Contact() {
               </div>
               <div>
                 <Input
-                  placeholder="Asunto"
+                  placeholder={t('contact.form.placeholders.subject')}
                   className="border-border focus:border-[#1be9ec] bg-card"
                   onClick={triggerBackgroundAnimation}
                 />
               </div>
               <div>
                 <Textarea
-                  placeholder="Mensaje"
+                  placeholder={t('contact.form.placeholders.message')}
                   rows={5}
                   className="border-border focus:border-[#1be9ec] bg-card resize-none"
                   onClick={triggerBackgroundAnimation}
@@ -79,10 +79,10 @@ export default function Contact() {
                 className="w-full bg-[#1be9ec] text-gray-900 hover:bg-[#1be9ec]/80"
                 onClick={triggerBackgroundAnimation}
               >
-                Enviar Mensaje
+                {t('contact.form.placeholders.sent')}
               </Button>
             </form>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -90,15 +90,15 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-semibold mb-6">Información de contacto</h3>
+            <h3 className="text-2xl font-semibold mb-6">{t('contact.info.title')}</h3>
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="w-12 h-12 rounded-full bg-[#1be9ec]/10 flex items-center justify-center mr-4">
                   <MapPin className="text-[#1be9ec]" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Ubicación</h4>
-                  <p className="text-foreground/70">Ciudad, País</p>
+                  <h4 className="font-medium mb-1">{t('contact.info.location')}</h4>
+                  <p className="text-foreground/70">La Habana, Cuba</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -106,8 +106,8 @@ export default function Contact() {
                   <Mail className="text-[#1be9ec]" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Email</h4>
-                  <p className="text-foreground/70">tu.email@ejemplo.com</p>
+                  <h4 className="font-medium mb-1">{t('contact.info.mail')}</h4>
+                  <p className="text-foreground/70">brunomamuel00@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -115,26 +115,26 @@ export default function Contact() {
                   <Phone className="text-[#1be9ec]" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Teléfono</h4>
-                  <p className="text-foreground/70">+1 234 567 890</p>
+                  <h4 className="font-medium mb-1">{t('contact.info.phone')}</h4>
+                  <p className="text-foreground/70">+5354866048</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 p-6 bg-card border border-border rounded-xl">
-              <h4 className="font-semibold mb-4">Horario de trabajo</h4>
+              <h4 className="font-semibold mb-4">{t('contact.info.schedule.workTime')}</h4>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-foreground/70">Lunes - Viernes:</span>
+                  <span className="text-foreground/70">{t('contact.info.schedule.monToFri')}</span>
                   <span>9:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-foreground/70">Sábado:</span>
+                  <span className="text-foreground/70">{t('contact.info.schedule.saturday')}</span>
                   <span>10:00 AM - 4:00 PM</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-foreground/70">Domingo:</span>
-                  <span>Cerrado</span>
+                  <span className="text-foreground/70">{t('contact.info.schedule.sunday')}</span>
+                  <span>{t('contact.info.schedule.sundayTime')}</span>
                 </div>
               </div>
             </div>
