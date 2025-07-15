@@ -42,7 +42,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen">
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-transparent"
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-700/25 backdrop-blur-md shadow-md" : "bg-transparent"
           }`}
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -89,6 +89,7 @@ export default function Layout({ children }: LayoutProps) {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-background/95 backdrop-blur-md"
             >
+
               <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <a

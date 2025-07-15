@@ -3,7 +3,7 @@ export default function Background() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-full -z-10 bg-gradient-to-tr from-slate-400 to-teal-500  dark:to-slate-800 dark:from-teal-200 ">
+      <div className="fixed top-0 left-0 w-full h-full -z-10 bg-gradient-to-tr dark:from-slate-700  dark:to-teal-800  from-slate-300 to-teal-700 ">
       </div>
     </>
   )

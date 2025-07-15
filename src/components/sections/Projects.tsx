@@ -1,6 +1,11 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
 import { ExternalLink, Github } from "lucide-react"
+import { useTranslation } from "react-i18next"
+import Match from "../../assets/match.png"
+import Gallery from "../../assets/gallery.png"
+import Health from "../../assets/health.png"
 
 interface Project {
   title: string
@@ -12,40 +17,37 @@ interface Project {
 }
 
 export default function Projects() {
+  const [showAll, setShowAll] = useState(false)
+  const { t } = useTranslation()
   const projects: Project[] = [
     {
-      title: "Diseño de E-commerce",
-      description: "Plataforma de comercio electrónico con diseño moderno y experiencia de usuario optimizada.",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
-      image: "https://placehold.co/600x400",
-      github: "#",
+      title: t('projects.skillsMatch.title'),
+      description: t('projects.skillsMatch.description'),
+      tags: ["React", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Express", "Mongo DB"],
+      image: Match,
+      github: "https://github.com/brunomanuel00/MatchSkills",
       demo: "#",
     },
     {
-      title: "App de Gestión de Tareas",
-      description: "Aplicación para gestionar tareas y proyectos con funcionalidades avanzadas.",
-      tags: ["React Native", "Firebase", "Redux"],
-      image: "https://placehold.co/600x400",
-      github: "#",
-      demo: "#",
+      title: t('projects.healthCare.title'),
+      description: t('projects.healthCare.description'),
+      tags: ["React", "Vite", "JavaScript", "Material UI", "Styled Components", "Swiper"],
+      image: Health,
+      github: "https://github.com/brunomanuel00/Health-Medical",
+      demo: "https://health-medical.vercel.app/",
     },
     {
-      title: "Dashboard Analítico",
-      description: "Panel de control para visualizar y analizar datos empresariales en tiempo real.",
-      tags: ["Vue.js", "D3.js", "Node.js"],
-      image: "https://placehold.co/600x400",
-      github: "#",
+      title: t('projects.photoGallery.title'),
+      description: t('projects.photoGallery.description'),
+      tags: ["React", "Vite", "TypeScript", "Material UI", "Styled Components"],
+      image: Gallery,
+      github: "https://github.com/brunomanuel00/Gallery",
       demo: "#",
     },
-    {
-      title: "Sitio Web Corporativo",
-      description: "Sitio web corporativo con diseño elegante y funcionalidades personalizadas.",
-      tags: ["WordPress", "PHP", "JavaScript"],
-      image: "https://placehold.co/600x400",
-      github: "#",
-      demo: "#",
-    },
+
   ]
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 4)
 
   const triggerBackgroundAnimation = () => {
     const event = new CustomEvent("buttonClick", {
@@ -65,15 +67,15 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Mis <span className="text-[#1be9ec]">Proyectos</span>
+            {t('projects.title.part1')} <span className="text-[#1be9ec]">{t('projects.title.part2')}</span>
           </h2>
           <p className="max-w-2xl mx-auto text-foreground/70">
-            Una selección de mis trabajos recientes en desarrollo web y diseño.
+            {t('projects.description')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -82,7 +84,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-card border border-border rounded-xl overflow-hidden hover:border-[#1be9ec]/50 transition-all duration-300"
             >
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-[350px] overflow-hidden">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -94,28 +96,41 @@ export default function Projects() {
                 <p className="text-foreground/70 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="text-xs px-3 py-1 rounded-full bg-[#1be9ec]/10 text-[#1be9ec]">
+                    <span
+                      key={tagIndex}
+                      className="text-xs px-3 py-1 rounded-full bg-[#1be9ec] dark:bg-[#1be9ec]/20 text-cyan-900 dark:text-[#1be9ec]"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-3">
                   <Button
+                    disabled={project.github === "#"}
                     variant="outline"
                     size="sm"
-                    className="border-[#1be9ec] text-[#1be9ec] hover:bg-[#1be9ec]/10"
-                    onClick={triggerBackgroundAnimation}
+                    className="border-[#1be9ec] text-cyan-900 dark:text-[#1be9ec] hover:bg-[#1be9ec]/20 "
+                    onClick={() => {
+                      window.open(project.github, "_blank");
+                      triggerBackgroundAnimation
+                    }
+                    }
                   >
                     <Github className="w-4 h-4 mr-2" />
-                    Código
+                    {t('projects.buttons.code')}
                   </Button>
                   <Button
+                    disabled={project.demo === "#"}
                     size="sm"
-                    className="bg-[#1be9ec] text-gray-900 hover:bg-[#1be9ec]/80"
-                    onClick={triggerBackgroundAnimation}
+                    className="bg-[#1be9ec] text-cyan-900 dark:text-[#1be9ec] hover:bg-[#1be9ec]/60 bg-[#1be9ec] dark:bg-[#1be9ec]/20 dark:hover:bg-[#1be9ec]/40"
+                    onClick={() => {
+                      window.open(project.demo, "_blank");
+                      triggerBackgroundAnimation
+                    }
+                    }
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
+                    {t('projects.buttons.demo')}
                   </Button>
                 </div>
               </div>
@@ -123,23 +138,24 @@ export default function Projects() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-12"
-        >
-          <Button
-            variant="outline"
-            className="border-[#1be9ec] text-[#1be9ec] hover:bg-[#1be9ec]/10"
-            onClick={triggerBackgroundAnimation}
+        {projects.length > 4 &&
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mt-12"
           >
-            Ver más proyectos
-          </Button>
-        </motion.div>
+            <Button
+              variant="outline"
+              className="border-[#1be9ec] text-[#1be9ec] hover:bg-[#1be9ec]/10"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? t('projects.buttons.showLess') : t('projects.buttons.showMore')}
+            </Button>
+          </motion.div>}
+
       </div>
     </section>
   )
 }
-

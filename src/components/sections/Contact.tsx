@@ -3,8 +3,12 @@ import { Button } from "../ui/button"
 import { Input } from "../ui/input"
 import { Textarea } from "../ui/textarea"
 import { MapPin, Mail, Phone } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export default function Contact() {
+
+  const { t } = useTranslation()
+
   const triggerBackgroundAnimation = () => {
     const event = new CustomEvent("buttonClick", {
       detail: { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight },
@@ -13,7 +17,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-background/50 backdrop-blur-sm">
+    <section id="contact" className="py-20 bg-gray-700/25 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,10 +27,10 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ponte en <span className="text-[#1be9ec]">Contacto</span>
+            {t('contact.title.part1')} <span className="text-[#1be9ec]">{t('contact.title.part2')}</span>
           </h2>
           <p className="max-w-2xl mx-auto text-foreground/70">
-            ¿Tienes un proyecto en mente? Contáctame y hablemos sobre cómo puedo ayudarte.
+            {t('contact.description')}
           </p>
         </motion.div>
 

@@ -28,7 +28,7 @@ export function LanguageToggle() {
             <DropdownMenuTrigger asChild>
                 <Button title={t('layout.language.title')} variant="ghost" className="hover:bg-inherit " size="icon">
                     <motion.div transition={{ duration: 0.2 }}>
-                        <Languages className="h-5 w-5 text-cyan-950 hover:text-white dark:hover:text-teal-400 dark:text-white transition-all duration-300 hover:scale-110" />
+                        <Languages className="h-5 w-5 text-foreground hover:text-white dark:hover:text-teal-400 dark:text-white transition-all duration-300 hover:scale-110" />
                         <span className="sr-only">title={t('language.title')}</span>
                     </motion.div>
                 </Button>

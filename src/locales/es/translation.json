@@ -26,6 +26,81 @@
         "goTo": {
             "projects": "Proyectos",
             "contact": "Contactar"
+        },
+        "scroll": "Desplazar hacia abajo"
+    },
+    "service": {
+        "title": {
+            "part1": "Mis ",
+            "part2": "Servicios Principales"
+        },
+        "paragraph": "Experiencia en toda la pila de desarrollo, adaptada a las necesidades de su proyecto.",
+        "frontend": {
+            "title": "Desarrollo de frontend",
+            "descriptionPart1": "React (Vite), TypeScript, Tailwind CSS, Shadcn/UI",
+            "descriptionPart2": "Construcción de interfaces accesibles y receptivas con marcos web modernos."
+        },
+        "backend": {
+            "title": "Desarrollo backend",
+            "descriptionPart1": "Express.js, MongoDB, Mongoose, JWT",
+            "descriptionPart2": "Diseño de API RESTful y autenticación segura para aplicaciones basadas en datos."
+        },
+        "dataBase": {
+            "title": "Gestión de bases de datos",
+            "descriptionPart1": "MongoDB, Mongoose",
+            "descriptionPart2": "Modelado de esquemas y optimización de consultas para el almacenamiento y recuperación eficiente de datos."
+        },
+        "chat": {
+            "title": "Comunicación en tiempo real",
+            "descriptionPart1": "Socket.IO",
+            "descriptionPart2": "Implementar funciones de chat en vivo para permitir interacciones instantáneas de los usuarios."
+        },
+        "test": {
+            "title": "Pruebas y gestión del estado",
+            "descriptionPart1": "Playwright, Jest, Redux, Context",
+            "descriptionPart2": "Escritura de pruebas unitarias y de extremo a extremo; gestión del estado global para un comportamiento predecible de la interfaz de usuario."
+        }
+    },
+    "projects": {
+        "title": {
+            "part1": "Mis",
+            "part2": "Proyectos"
+        },
+        "description": "Una selección de mis trabajos recientes en desarrollo web.",
+        "buttons": {
+            "code": "Código",
+            "demo": "Demo",
+            "showMore": "Ver más proyectos",
+            "showLess": "Ver menos proyectos"
+        },
+        "skillsMatch": {
+            "title": "Skills Match",
+            "description": "Un sistema que conecta personas con habilidades complementarias para proyectos y colaboraciones."
+        },
+        "healthCare": {
+            "title": "Health Care",
+            "description": "Sitio web informativo de una clínica, que muestra servicios médicos, especialidades y datos de contacto."
+        },
+        "photoGallery": {
+            "title": "Photo Gallery",
+            "description": "Una pequeña galería que almacena fotos en el navegador mediante almacenamiento local, lo que le permite verlas y administrarlas."
+        }
+    },
+    "contact": {
+        "title": {
+            "part1": "Ponte en ",
+            "part2": "Contacto"
+        },
+        "description": "¿Tienes un proyecto en mente? Contáctame y hablemos sobre cómo puedo ayudarte.",
+        "form": {
+            "title": "Envíame un mensaje",
+            "placeholders": {
+                "name": "Nombre",
+                "email": "Email",
+                "subject": "Asunto",
+                "message": "Mensaje",
+                "sent": "Enviar Mensaje"
+            }
         }
     }
 }

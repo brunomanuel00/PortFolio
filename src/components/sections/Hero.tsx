@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold mb-4"
+          className="text-4xl dark:text-white text-black md:text-6xl font-bold mb-4"
         >
           {t('hero.presentation')} <span className="text-[#1be9ec]">Bruno Coello</span>
         </motion.h1>
@@ -41,7 +41,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-2xl md:text-3xl font-medium text-foreground/80 mb-6"
+          className="text-2xl md:text-3xl font-medium dark:text-white text-black mb-6"
         >
           {t('hero.profession')}
         </motion.h2>
@@ -50,7 +50,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-2xl text-foreground/70 mb-8 text-lg"
+          className="max-w-2xl dark:text-white text-black mb-8 text-lg"
         >
           {t('hero.description')}
         </motion.p>
@@ -119,16 +119,16 @@ export default function Hero() {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 1, translateY: [5, -5, 0] }}
           transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-10"
+          className="absolute bottom-14"
         >
           <a
             href="#services"
-            className="flex flex-col items-center text-foreground/50 hover:text-[#1be9ec] transition-colors"
+            className="flex flex-col items-center dark:text-white text-black hover:text-[#1be9ec] dark:hover:text-[#1be9ec] transition-all"
             onClick={triggerBackgroundAnimation}
           >
-            <span className="mb-2 text-sm">Desplazar hacia abajo</span>
+            <span className="mb-2 text-sm">{t('hero.scroll')}</span>
             <ArrowDown className="animate-bounce" />
           </a>
         </motion.div>
